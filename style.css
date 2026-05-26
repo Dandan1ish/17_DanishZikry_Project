@@ -408,3 +408,98 @@ footer a{
 footer a:hover{
     text-decoration:underline;
 }
+
+/* ABOUT PAGE UPGRADE */
+
+.about-hero{
+    min-height:70vh;
+    background:linear-gradient(to right, rgba(255,255,255,0.95), rgba(255,255,255,0.4)), url('about.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    padding:80px;
+}
+
+.about-hero-text{
+    max-width:550px;
+}
+
+.small-title{
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.about-hero h1,
+.contact-hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.journey{
+    text-align:center;
+}
+
+.timeline{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:30px;
+}
+
+.timeline div,
+.mission-vision div{
+    border:1px solid #ddd;
+    padding:30px;
+    background:#fafafa;
+}
+
+.mission-vision{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+/* CONTACT PAGE UPGRADE */
+
+.contact-hero{
+    min-height:55vh;
+    background:linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('contact.jpg') center/cover no-repeat;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:80px;
+}
+
+.contact-page{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.contact-form-box,
+.contact-info-box{
+    padding:40px;
+    border:1px solid #ddd;
+    background:#fafafa;
+}
+
+.contact-info-box a{
+    color:black;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+    .about-hero,
+    .contact-hero{
+        padding:40px;
+    }
+
+    .about-hero h1,
+    .contact-hero h1{
+        font-size:40px;
+    }
+
+    .mission-vision,
+    .contact-page{
+        grid-template-columns:1fr;
+    }
+}
