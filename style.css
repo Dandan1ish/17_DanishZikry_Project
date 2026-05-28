@@ -18,6 +18,7 @@ header{
     border-bottom:1px solid #ddd;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 
 nav{
@@ -27,6 +28,7 @@ nav{
     padding:20px 60px;
 }
 
+/* LOGO */
 .logo{
     display:flex;
     align-items:center;
@@ -35,6 +37,7 @@ nav{
 
 .logo img{
     height:45px;
+    width:auto;
 }
 
 .logo span{
@@ -43,6 +46,7 @@ nav{
     letter-spacing:2px;
 }
 
+/* NAV LINKS */
 nav ul{
     display:flex;
     list-style:none;
@@ -60,15 +64,16 @@ nav a:hover{
     color:gray;
 }
 
-/* HERO SECTION */
+/* HOME HERO */
 .hero{
     height:100vh;
 
     background:
-    linear-gradient(to right,
-    rgba(197, 185, 185, 0.8),
+    linear-gradient(
+    to right,
+    rgba(0,0,0,0.75),
     rgba(0,0,0,0.2)),
-    url('images/hero.png');
+    url("images/hero.png");
 
     background-size:cover;
     background-position:center;
@@ -77,10 +82,12 @@ nav a:hover{
     align-items:center;
 
     padding-left:80px;
+
+    color:white;
 }
 
 .hero-text{
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0.45);
     padding:40px;
     max-width:500px;
 }
@@ -95,6 +102,7 @@ nav a:hover{
     line-height:1.6;
 }
 
+/* BUTTON */
 .btn{
     display:inline-block;
     background:black;
@@ -109,7 +117,7 @@ nav a:hover{
     background:#444;
 }
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 section{
     padding:80px 60px;
 }
@@ -127,6 +135,7 @@ section{
     gap:30px;
 }
 
+/* PRODUCT CARD */
 .product-card{
     border:1px solid #ddd;
     overflow:hidden;
@@ -136,13 +145,15 @@ section{
 
 .product-card:hover{
     transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
 }
 
 .product-card img{
     width:100%;
-    height:250px;
-   object-fit:contain;
+    height:300px;
+    object-fit:contain;
     background:white;
+    padding:20px;
 }
 
 .product-info{
@@ -159,150 +170,85 @@ section{
     margin-top:10px;
 }
 
-/* ABOUT PAGE */
-.about-container{
-    max-width:900px;
-    margin:auto;
-    line-height:1.8;
-}
-
-.about-container h2{
-    margin-bottom:20px;
-}
-
-/* CONTACT FORM */
-.contact-container{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-}
-
-form{
-    display:flex;
-    flex-direction:column;
-}
-
-input, textarea{
-    padding:15px;
-    margin-bottom:20px;
-    border:1px solid #ccc;
-}
-
-textarea{
-    height:150px;
-}
-
-button{
-    padding:15px;
-    border:none;
-    background:black;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-    background:black;
-    color:white;
-    text-align:center;
-    padding:30px;
-    margin-top:50px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-
-    nav{
-        flex-direction:column;
-        gap:20px;
-    }
-
-    .hero-text h1{
-        font-size:40px;
-    }
-
-    .contact-container{
-        grid-template-columns:1fr;
-    }
-}
+/* ABOUT PAGE HERO */
 
 .about-hero{
-    height:70vh;
+    min-height:70vh;
+
     background:
-    linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
-    url("images/About.PNG");
-    background-size:cover;
-    background-position:center;
+    linear-gradient(
+    to right,
+    rgba(255,255,255,0.92),
+    rgba(255,255,255,0.35)),
+    url("images/About.PNG") center/cover no-repeat;
+
     display:flex;
     align-items:center;
+
     padding:80px;
-    color:white;
-}
-.about-hero-text{
-    max-width:600px;
+
+    color:black;
 }
 
-.about-hero-text h1{
+.about-hero-text{
+    max-width:550px;
+}
+
+.about-hero h1{
     font-size:60px;
     margin-bottom:20px;
 }
 
-.about-hero-text p{
-    font-size:20px;
-    line-height:1.6;
+.about-hero p{
+    line-height:1.7;
+    font-size:18px;
 }
 
-.about-story{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+.small-title{
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:10px;
 }
 
-.story-text h2{
-    font-size:40px;
-    margin-bottom:20px;
-}
+/* JOURNEY SECTION */
 
-.story-text p{
-    line-height:1.8;
-    margin-bottom:20px;
-}
-
-.story-image img{
-    width:100%;
-    height:400px;
-    object-fit:cover;
-    background:white;
-}
-
-.timeline-section{
-    background:#f4f4f4;
+.journey{
+    text-align:center;
 }
 
 .timeline{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-    gap:25px;
+    gap:30px;
 }
 
-.timeline-card{
-    background:white;
+.timeline div{
+    border:1px solid #ddd;
     padding:30px;
-    border-left:6px solid black;
+    background:#fafafa;
     transition:0.3s;
 }
 
-.timeline-card:hover{
+.timeline div:hover{
     transform:translateY(-8px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-.timeline-card h3{
-    font-size:28px;
-    margin-bottom:10px;
+/* MISSION / VISION */
+
+.mission-vision{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
 }
+
+.mission-vision div{
+    border:1px solid #ddd;
+    padding:30px;
+    background:#fafafa;
+}
+
+/* VALUES */
 
 .values-grid{
     display:grid;
@@ -328,18 +274,74 @@ footer{
     margin-bottom:15px;
 }
 
-@media(max-width:768px){
-    .about-story{
-        grid-template-columns:1fr;
-    }
+/* CONTACT PAGE HERO */
 
-    .about-hero{
-        padding:40px;
-    }
+.contact-hero{
+    min-height:55vh;
 
-    .about-hero-text h1{
-        font-size:40px;
-    }
+    background:
+    linear-gradient(
+    to right,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.2)),
+    url("images/contact.jpg") center/cover no-repeat;
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+
+    padding:80px;
+}
+
+.contact-page{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.contact-form-box,
+.contact-info-box{
+    padding:40px;
+    border:1px solid #ddd;
+    background:#fafafa;
+}
+
+.contact-info-box a{
+    color:black;
+    font-weight:bold;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+input,
+textarea{
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+}
+
+textarea{
+    height:150px;
+}
+
+button{
+    padding:15px;
+    border:none;
+    background:black;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#333;
 }
 
 /* REVIEWS */
@@ -376,7 +378,15 @@ footer{
     font-size:14px;
 }
 
-/* FOOTER LINKS */
+/* FOOTER */
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
 
 .footer-content{
     text-align:center;
@@ -409,97 +419,36 @@ footer a:hover{
     text-decoration:underline;
 }
 
-/* ABOUT PAGE UPGRADE */
-
-.about-hero{
-    min-height:70vh;
-    background:linear-gradient(to right, rgba(255,255,255,0.95), rgba(255,255,255,0.4)), url('about.jpg') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    padding:80px;
-}
-
-.about-hero-text{
-    max-width:550px;
-}
-
-.small-title{
-    font-weight:bold;
-    letter-spacing:2px;
-    margin-bottom:10px;
-}
-
-.about-hero h1,
-.contact-hero h1{
-    font-size:60px;
-    margin-bottom:20px;
-}
-
-.journey{
-    text-align:center;
-}
-
-.timeline{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:30px;
-}
-
-.timeline div,
-.mission-vision div{
-    border:1px solid #ddd;
-    padding:30px;
-    background:#fafafa;
-}
-
-.mission-vision{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-/* CONTACT PAGE UPGRADE */
-
-.contact-hero{
-    min-height:55vh;
-    background:linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url('contact.jpg') center/cover no-repeat;
-    color:white;
-    display:flex;
-    align-items:center;
-    padding:80px;
-}
-
-.contact-page{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-}
-
-.contact-form-box,
-.contact-info-box{
-    padding:40px;
-    border:1px solid #ddd;
-    background:#fafafa;
-}
-
-.contact-info-box a{
-    color:black;
-    font-weight:bold;
-}
+/* RESPONSIVE */
 
 @media(max-width:768px){
-    .about-hero,
-    .contact-hero{
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero{
         padding:40px;
     }
 
+    .hero-text h1,
     .about-hero h1,
     .contact-hero h1{
         font-size:40px;
     }
 
-    .mission-vision,
-    .contact-page{
+    .contact-page,
+    .mission-vision{
         grid-template-columns:1fr;
+    }
+
+    .about-hero,
+    .contact-hero{
+        padding:40px;
+    }
+
+    section{
+        padding:60px 25px;
     }
 }
